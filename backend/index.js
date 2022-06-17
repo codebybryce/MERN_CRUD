@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose');
 const cors = require("cors");
 const app = express()
 const port = 3001
 const Unix = require('./models/UnixCommandsSchema')
-mongoose.connect('mongodb+srv://bryce:bmw01car@app.xmdz1.mongodb.net/Unix?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGO_DB,
     { useNewUrlParser: true }
 )
 
